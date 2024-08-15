@@ -1,25 +1,116 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_softsleep {
+            timeout-ms = <50>;
+            key-positions = <0 9>;
+            layers = <2>;
+            bindings = <&soft_off>;
+        };
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
 
 // -----------------------------------------------------------------------------------------
-// |  Q  |  W  |  E  |  R  |  T  |     |     |  Y  |  U  |  I  |  O  |  P  |
-// |  A  |  S  |  D  |  F  |  G  |     |     |  H  |  J  |  K  |  L  |  Å  |
-// |  Z  |  X  |  C  |  V  |  B  |     |     |  N  |  M  |  ,  |  .  |  Ö  |
-//       |     | TAB | MO1 | SPC |     |     | ENT | MO2 | BSP |     |
+// |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |  I  |  O  |  P  |
+// |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  Å  |
+// |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  Ö  |
+//       | LGUI | TAB | MO2 |spMO1|     |enMO3| MO4 | BSP |GAME |
     
             bindings = <
-    &kp Q    &kp W     &kp E     &kp R     &kp T           &kp Y   &kp U   &kp I     &kp O     &kp P
-    &kp A    &kp S     &kp D     &kp F     &kp G           &kp H   &kp J   &kp K     &kp L     &kp SEMI
-    &kp Z    &kp X     &kp C     &kp V     &kp B           &kp N   &kp M   &kp COMMA &kp DOT   &kp FSLH
-             &kp M     &kp TAB   &kp M     &kp SPACE       &kp RET &kp M   &kp BSPC  &kp M
+    &kp Q   &kp W       &kp E        &kp R         &kp T               &kp Y     &kp U         &kp I        &kp O      &kp P
+    &kp A   &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &kp G               &kp H     &mt RSHIFT J  &mt RCTRL K  &mt RALT L &mt RA(W) RA(Q)
+    &kp Z   &kp X       &kp C        &kp V         &kp B               &kp N     &kp M         &kp COMMA    &kp DOT    &kp RA(P)
+            &kp LGUI    &kp TAB      &mo 3         &lt 1 SPACE         &lt 2 RET &mo 4         &kp BSPC     &tog 5
             >;
         };
         
+        mo1_layer {
+
+// -----------------------------------------------------------------------------------------
+// | ESC |     |     |  $  |  %  |     |  7  |  8  |  9  |  +  |  -  |
+// |     |     |     |     |     |     |  4  |  5  |  6  |  *  |  /  |
+// |     |     |     | INS |     |     |  1  |  2  |  3  |  ^  |  =  |
+//       |     |     |     | mod |     |  0  |     |     |     |
+    
+            bindings = <
+    &kp ESC  &none     &none   &kp DLLR     &kp PRCNT          &kp KP_N7   &kp KP_N8  &kp KP_N9  &kp PLUS   &kp MINUS
+    &none    &none     &none   &none     &none          &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp STAR   &kp FSLH
+    &none    &none     &none   &kp INS   &none          &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp CARET  &kp EQUAL
+             &none     &none   &none     &none          &kp KP_N0   &none      &none      &none
+            >;
+        };
+        
+        mo2_layer {
+
+// -----------------------------------------------------------------------------------------
+// | ESC |     |     |     |     |      |  (  |  )  |  &  |  |  |  @  |
+// |     |     |     |     |     |      |  [  |  ]  |  <  |  >  |  \  |
+// |     |     |     |     |     |      |  {  |  }  |  "  |  '  |  #  |
+//       |     |     | mod |     |      |  ?  |  !  | DEL |     |
+    
+            bindings = <
+    &kp ESC  &none     &none     &none     &none               &kp LPAR   &kp RPAR    &kp AMPS     &kp PIPE    &kp AT
+    &none    &none     &none     &none     &none               &kp LBKT   &kp RBKT    &kp LT     &kp GT     &kp BSLH
+    &none    &none     &none     &none     &none               &kp LBRC   &kp RBRC    &kp DQT &kp APOS   &kp POUND
+             &none     &none   &none  &none               &kp QMARK &kp EXCL &kp DEL  &none
+            >;
+        };
+        
+        mo3_layer {
+
+// -----------------------------------------------------------------------------------------
+// |     | END |  UP | HOM | PUP |     |     | F1  | F2  | F3  | F4  |     |
+// |     | LFT | DWN | RIG | PDW |     |     | F5  | F6  | F7  | F8  |     |
+// |     |     |     |     |     |     |     | F9  | F10 | F11 | F12 |     |
+//       |     |     |     |     |LGUI |     | mod |     |     |     |
+    
+            bindings = <
+    &none    &kp END     &kp UP     &kp HOME     &kp PG_UP        &kp F1   &kp F2    &kp F3     &kp F4     &none
+    &none    &kp LEFT     &kp DOWN     &kp RIGHT     &PG_DN      &kp F5   &kp F6    &kp F7     &kp F8     &none
+    &none    &none     &none     &none     &none               &kp F9   &kp F10 &kp F11   &kp F12 &none
+             &none     &none   &none  &none   &kp LGUI        &none &none  &none
+            >;
+        };
+
+        mo4_layer {
+
+// -----------------------------------------------------------------------------------------
+// |     |     |     |     |     |     | BT1 | BT1 |     |     |boot |
+// |     |     |     |     |     |     | BT1 | BT1 |     |     |     |
+// |     |     |     |     |     |     | BT1 |BToff|     |     |     |
+//       |     |     |     |     |     |     |     | mod |     |     |
+    
+            bindings = <
+    &none    &none     &none     &none     &none               &bt BT_SEL 1   &bt BT_SEL 2    &none     &none     &bootloader
+    &none    &none     &none     &none     &none               &bt BT_SEL 3   &bt BT_SEL 4    &none     &none     &none
+    &none    &none     &none     &none     &none               &bt BT_SEL 5   &bt BT_CLR    &none &none   &none
+             &none     &none   &none  &none   &none &none &none  &none
+            >;
+        };
+
+        game_layer {
+
+// -----------------------------------------------------------------------------------------
+// |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |  I  |  O  |  P  |
+// |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  Å  |
+// |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  Ö  |
+//       | CTRL| TAB |SHIFT|SPACE|     | RET |     | BSP | DEF |
+    
+            bindings = <
+    &kp Q   &kp W      &kp       &kp R      &kp T               &kp Y     &kp U  &kp I      &kp O      &kp P
+    &kp A   &kp S      &kp D     &kp F      &kp G               &kp H     &kp J  &kp K      &kp L &mt RA(W) RA(Q)
+    &kp Z   &kp X      &kp C     &kp V      &kp B               &kp N     &kp M  &kp COMMA  &kp DOT    &kp RA(P)
+            &kp LCTRL  &kp TAB   &kp LSHIFT &kp SPACE           &kp RET   &none &kp BSPC  &tog 1
+            >;
+        };
     };
 };
