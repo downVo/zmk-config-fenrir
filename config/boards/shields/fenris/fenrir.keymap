@@ -3,7 +3,16 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-  
+    combos {
+        compatible = "zmk,combos";
+        combo_softsleep {
+            timeout-ms = <50>;
+            key-positions = <0 9 20 35>;
+            bindings = <&soft_off>;
+        };
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -87,7 +96,7 @@
             >;
         };
 
-        game_layer {
+        gaming_layer {
 
 // -----------------------------------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |  I  |  O  |  P  |
