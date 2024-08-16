@@ -96,6 +96,21 @@
             >;
         };
 
+        mod5_layer {
+
+// -----------------------------------------------------------------------------------------
+// |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |  I  |  O  |  P  |
+// |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  Å  |
+// |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  Ö  |
+//       |CTRL | TAB |SHIFT|SPACE|     | RET |     | BSP | DEF |
+    
+            bindings = <
+    &kp Q   &kp W       &kp E        &kp R         &kp T          &kp Y       &kp U         &kp I        &kp O      &kp P
+    &kp A   &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &mt LGUI G     &mt RGUI H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L &mt RA(W) RA(Q)
+    &kp Z   &kp X       &kp C        &kp V         &kp B          &kp N       &kp M         &kp COMMA    &kp DOT    &kp RA(P)
+            &kp LCTRL   &kp TAB      &kp LSHIFT    &kp SPACE      &kp RET     &none         &kp BSPC     &tog 0
+            >;
+        };
  
     };
 };
