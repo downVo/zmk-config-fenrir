@@ -3,16 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-        combo_softsleep {
-            timeout-ms = <50>;
-            key-positions = <0 9 20 35>;
-            bindings = <&soft_off>;
-        };
-    };
-
-
+  
     keymap {
         compatible = "zmk,keymap";
 
@@ -22,13 +13,13 @@
 // |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  Å  |
 // |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  Ö  |
-//       | LGUI | TAB | MO2 |spMO1|     |enMO3| MO4 | BSP |GAME |
+//       |GAME | TAB | M2  |sp M1|     |en M3| M4  | BSP | DEF |
     
             bindings = <
     &kp Q   &kp W       &kp E        &kp R         &kp T            &kp Y       &kp U         &kp I        &kp O      &kp P
     &kp A   &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &mt LGUI G       &mt RGUI H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L &mt RA(W) RA(Q)
     &kp Z   &kp X       &kp C        &kp V         &kp B            &kp N       &kp M         &kp COMMA    &kp DOT    &kp RA(P)
-            &kp LGUI    &kp TAB      &mo 3         &lt 1 SPACE      &lt 2 RET   &mo 4         &kp BSPC     &tog 5
+            &tog 5      &kp TAB      &mo 2         &lt 1 SPACE      &lt 3 RET   &mo 4         &kp BSPC     &tog 0
             >;
         };
         
@@ -105,10 +96,10 @@
 //       | CTRL| TAB |SHIFT|SPACE|     | RET |     | BSP | DEF |
     
             bindings = <
-    &kp Q   &kp W      &kp       &kp R      &kp T               &kp Y     &kp U  &kp I      &kp O      &kp P
-    &kp A   &kp S      &kp D     &kp F      &kp G               &kp H     &kp J  &kp K      &kp L &mt RA(W) RA(Q)
-    &kp Z   &kp X      &kp C     &kp V      &kp B               &kp N     &kp M  &kp COMMA  &kp DOT    &kp RA(P)
-            &kp LCTRL  &kp TAB   &kp LSHIFT &kp SPACE           &kp RET   &none &kp BSPC  &tog 1
+    &kp Q   &kp W      &kp       &kp R      &kp T               &kp Y     &kp U  &kp I      &kp O    &kp P
+    &kp A   &kp S      &kp D     &kp F      &kp G               &kp H     &kp J  &kp K      &kp L    &mt RA(W) RA(Q)
+    &kp Z   &kp X      &kp C     &kp V      &kp B               &kp N     &kp M  &kp COMMA  &kp DOT  &kp RA(P)
+            &kp LCTRL  &kp TAB   &kp LSHIFT &kp SPACE           &kp RET   &none  &kp BSPC   &tog 0
             >;
         };
     };
