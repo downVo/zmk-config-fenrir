@@ -3,11 +3,20 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    behaviors {   
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RA(Q)>, <&kp RA(W)>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
         combo_softsleep {
             timeout-ms = <50>;
-            key-positions = <0 9 20 35>;
+            key-positions = <0 9 20 29>;
             bindings = <&soft_off>;
         };
     };
@@ -26,7 +35,7 @@
     
             bindings = <
     &kp Q   &kp W       &kp E        &kp R         &kp T            &kp Y       &kp U         &kp I        &kp O      &kp P
-    &kp A   &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &mt LGUI G       &mt RGUI H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L &mt RA(W) RA(Q)
+    &kp A   &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &mt LGUI G       &mt RGUI H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L &td0
     &kp Z   &kp X       &kp C        &kp V         &kp B            &kp N       &kp M         &kp COMMA    &kp DOT    &kp RA(P)
             &tog 5      &kp TAB      &mo 2         &lt 1 SPACE      &lt 3 RET   &mo 4         &kp BSPC     &tog 0
             >;
@@ -106,7 +115,7 @@
     
             bindings = <
     &kp Q   &kp W       &kp E        &kp R         &kp T          &kp Y       &kp U         &kp I        &kp O      &kp P
-    &kp A   &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &mt LGUI G     &mt RGUI H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L &mt RA(W) RA(Q)
+    &kp A   &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &mt LGUI G     &mt RGUI H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L &td0
     &kp Z   &kp X       &kp C        &kp V         &kp B          &kp N       &kp M         &kp COMMA    &kp DOT    &kp RA(P)
             &kp LCTRL   &kp TAB      &kp LSHIFT    &kp SPACE      &kp RET     &none         &kp BSPC     &tog 0
             >;
