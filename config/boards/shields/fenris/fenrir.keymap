@@ -28,48 +28,48 @@
         default_layer {
 
 // -----------------------------------------------------------------------------------------
-// |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |  I  |  O  |  P  |
-// |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  Å  |
-// |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  Ö  |
-//       |GAME | TAB | M2  |sp M1|     |en M3| M4  | BSP | DEF |
+// |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  |
+// |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |  Å  |
+// |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |  Ö  |
+//             |GAME | MO2 |SPACE| TAB || BSP | RET | MO4 | DEF |
     
             bindings = <
-    &kp Q   &kp W       &kp E        &kp R         &kp T            &kp Y       &kp U         &kp I        &kp O      &kp P
-    &kp A   &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &mt LGUI G       &mt RGUI H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L &td0
-    &kp Z   &kp X       &kp C        &kp V         &kp B            &kp N       &kp M         &kp COMMA    &kp DOT    &kp RA(P)
-            &tog 5      &kp TAB      &mo 2         &lt 1 SPACE      &lt 3 RET   &mo 4         &kp BSPC     &tog 0
+    &kp Q   &kp W       &kp E        &kp R        &kp T                     &kp Y       &kp U         &kp I        &kp O      &kp P
+    &kp A   &mt LALT S  &mt LCTRL D  &mt LSHIFT F &mt LGUI G                &mt RGUI H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L &td0
+    &kp Z   &kp X       &kp C        &kp V        &kp B                     &kp N       &kp M         &kp COMMA    &kp DOT    &kp RA(P)
+                        &tog 5       &mo 2        &lt 1 SPACE   &lt 1 SPACE &lt 3 RET   &mo 4         &kp BSPC     &tog 0
             >;
         };
         
         mod1_layer {
 
 // -----------------------------------------------------------------------------------------
-// | ESC |     |     |  $  |  %  |     |  7  |  8  |  9  |  +  |  -  |
-// |     |     |     |     |     |     |  4  |  5  |  6  |  *  |  /  |
-// |     |     |     | INS |     |     |  1  |  2  |  3  |  ^  |  =  |
-//       |     |     |     | mod |     |  0  |     |     |     |
+// | ESC |     |     |  $  |  %  |            |  7  |  8  |  9  |  +  |  -  |
+// |     |     |     |     |     |            |  4  |  5  |  6  |  *  |  /  |
+// |     |     |     | INS |     |            |  1  |  2  |  3  |  ^  |  =  |
+//       |     |     |     | mod |     || DEL |  0  |     |     |
     
             bindings = <
-    &kp ESC  &none   &none   &kp DLLR  &kp PRCNT      &kp KP_N7   &kp KP_N8  &kp KP_N9  &kp PLUS   &kp MINUS
-    &none    &none   &none   &none     &none          &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp STAR   &kp FSLH
-    &none    &none   &none   &kp INS   &none          &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp CARET  &kp EQUAL
-             &none   &none   &none     &none          &kp KP_N0   &none      &none      &none
+    &kp ESC  &none   &none   &kp DLLR  &kp PRCNT                     &kp KP_N7   &kp KP_N8  &kp KP_N9  &kp PLUS   &kp MINUS
+    &none    &none   &none   &none     &none                         &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp STAR   &kp FSLH
+    &none    &none   &none   &kp INS   &none                         &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp CARET  &kp EQUAL
+                     &none   &none     &none     &none       &none &kp KP_N0   &none      &none
             >;
         };
         
         mod2_layer {
 
 // -----------------------------------------------------------------------------------------
-// | OFF |     |     |     |     |      |  (  |  )  |  &  |  |  |  @  |
-// |     |     |     |     |     |      |  [  |  ]  |  <  |  >  |  \  |
-// |     |     |     |     |     |      |  {  |  }  |  "  |  '  |  #  |
-//       |     |     | mod |     |      |  ?  |  !  | DEL |     |
+// | OFF |     |     |     |     |            |  (  |  )  |  &  |  |  |  @  |
+// |     |     |     |     |     |            |  [  |  ]  |  <  |  >  |  \  |
+// |     |     |     |     |     |            |  {  |  }  |  "  |  '  |  #  |
+//             |     | mod |     |     ||     |  ?  |  !  |     |     |
     
             bindings = <
-    &kp LA(F4) &none   &none   &none  &none     &kp LPAR   &kp RPAR   &kp AMPS  &kp PIPE   &kp AT
-    &none      &none   &none   &none  &none     &kp LBKT   &kp RBKT   &kp LT    &kp GT     &kp BSLH
-    &none      &none   &none   &none  &none     &kp LBRC   &kp RBRC   &kp DQT   &kp APOS   &kp POUND
-               &none   &none   &none  &none     &kp QMARK  &kp EXCL   &kp DEL   &none
+    &kp LA(F4) &none   &none   &none  &none                   &kp LPAR   &kp RPAR   &kp AMPS  &kp PIPE   &kp AT
+    &none      &none   &none   &none  &none                   &kp LBKT   &kp RBKT   &kp LT    &kp GT     &kp BSLH
+    &none      &none   &none   &none  &none                   &kp LBRC   &kp RBRC   &kp DQT   &kp APOS   &kp POUND
+                       &none   &none  &none  &none    &kp DEL &kp QMARK  &kp EXCL   &none
             >;
         };
         
@@ -108,16 +108,16 @@
         mod5_layer {
 
 // -----------------------------------------------------------------------------------------
-// |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |  I  |  O  |  P  |
-// |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  Å  |
-// |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  Ö  |
-//       |CTRL | TAB |SHIFT|SPACE|     | RET |     | BSP | DEF |
+// |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  |
+// |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |  Å  |
+// |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |  Ö  |
+//             |CTRL |SHIFT|SPACE| TAB || BSP | RET | MOD | DEF |
     
             bindings = <
-    &kp Q   &kp W       &kp E        &kp R         &kp T          &kp Y       &kp U         &kp I        &kp O      &kp P
-    &kp A   &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &mt LGUI G     &mt RGUI H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L &td0
-    &kp Z   &kp X       &kp C        &kp V         &kp B          &kp N       &kp M         &kp COMMA    &kp DOT    &kp RA(P)
-            &kp LCTRL   &kp TAB      &kp LSHIFT    &kp SPACE      &kp RET     &none         &kp BSPC     &tog 0
+    &kp Q   &kp W   &kp E       &kp R       &kp T                            &kp Y  &kp U     &kp I      &kp O    &kp P
+    &kp A   &kp S   &kp D       &kp F       &kp G                            &kp H  &kp J     &kp K      &kp L    &td0
+    &kp Z   &kp X   &kp C       &kp V       &kp B                            &kp N  &kp M     &kp COMMA  &kp DOT  &kp RA(P)
+                    &kp LCTRL   &kp LSHIFT  &kp SPACE   &kp TAB    &kp RET   &none  &kp BSPC  &tog 0
             >;
         };
  
