@@ -42,7 +42,7 @@
     &kp Q       &kp W       &kp E        &kp R        &kp T                              &kp Y      &kp U         &kp I       &kp O       &kp P
     &mt LGUI A  &mt LCTRL S &mt LALT D   &mt LSHIFT F &kp G                              &kp H      &mt RSHIFT J  &mt RALT K  &mt RCTRL L &td0
     &kp Z       &kp X       &kp C        &kp V        &kp B                              &kp N      &kp M         &kp COMMA   &kp DOT     &kp RA(P)
-                            &to 5        &mo 2        &lt 1 SPACE   &kp TAB    &kp BSPC  &lt 3 RET  &mo 4         &to 0
+                            &kp D        &mo 2        &lt 1 SPACE   &kp TAB    &kp BSPC  &lt 3 RET  &mo 4         &to 5
             >;
         };
         
@@ -84,13 +84,13 @@
 // |     | END |  UP | HOM | PUP |     |            | F1  | F2  | F3  | F4  |     |
 // | GUI | LFT | DWN | RIG | PDW |     |            | F5  | F6  | F7  | F8  |     |
 // |     |     |     |     |     |     |            | F9  | F10 | F11 | F12 |     |
-//             |     |     |     |     |     ||     | mod |     |     |
+//             |     |     |     |SHIFT|     ||     | mod |     |     |
     
             bindings = <
     &none    &kp END   &kp UP    &kp HOME   &kp PG_UP                   &kp F1    &kp F2   &kp F3   &kp F4   &none
     &kp LGUI &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN                   &kp F5    &kp F6   &kp F7   &kp F8   &none
     &none    &none     &none     &none      &none                       &kp F9    &kp F10  &kp F11  &kp F12  &none
-                       &none     &none      &none      &none    &none   &none     &none    &none
+                       &none     &none      &kp LSHIFT      &none    &none   &none     &none    &none
             >;
         };
 
