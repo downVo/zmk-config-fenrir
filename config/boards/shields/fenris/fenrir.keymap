@@ -4,7 +4,7 @@
 
 / {
     behaviors {   
-        td0: Ä_Å {
+        td0: tapdance0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
