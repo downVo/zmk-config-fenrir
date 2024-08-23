@@ -25,12 +25,12 @@
         compatible = "zmk,combos";
         combo_ESC {
             timeout-ms = <50>;
-            key-positions = <5 6>;
+            key-positions = <4 5>;
             bindings = <&kp ESC>;
         };
         combo_softsleep {
             timeout-ms = <50>;
-            key-positions = <0 9 20 29>;
+            key-positions = <1 2 3 4>;
             bindings = <&soft_off>;
         };
     };
@@ -45,29 +45,29 @@
 // |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |  Å  |
 // |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |  Ö  |
-//             |GAME | MO2 |SPACE| TAB || BSP | RET | MO4 | DEF |
+//             |     | TAB |SPACE| MO2 || MO4 | RET | BSP | DEF |
     
             bindings = <
-    &kp Q   &kp W        &kp E        &kp R         &kp T                               &kp Y      &kp U          &kp I        &kp O        &kp P
-    &kp A   &rpi LCTRL S &mt LALT D   &rpi LSHIFT F &kp G                               &kp H      &rpi RSHIFT J  &rpi RALT K  &rpi RCTRL L &td0
-    &kp Z   &kp X        &kp C        &kp V         &kp B                               &kp N      &kp M          &kp COMMA    &kp DOT      &kp RA(P)
-                         &kp LGUI     &mo 2         &lt 1 SPACE   &kp TAB     &kp BSPC  &lt 3 RET  &mo 4          &to 5
+    &kp Q   &kp W       &kp E        &kp R         &kp T                           &kp Y      &kp U          &kp I        &kp O        &kp P
+    &kp A   &rpi LALT S &mt LCTRL D   &rpi LSHIFT F &kp G                          &kp H      &rpi RSHIFT J  &rpi RALT K  &rpi RCTRL L &td0
+    &kp Z   &kp X       &kp C        &kp V         &kp B                           &kp N      &kp M          &kp COMMA    &kp DOT      &kp RA(P)
+                        &kp LGUI     &kp TAB        &lt 1 SPACE &mo 2       &mo 4  &lt 3 RET  &kp BSPC       &to 5
             >;
         };
         
         mod1_layer {
 
 // -----------------------------------------------------------------------------------------
-// |     |     |     |  $  |  %  |            |  7  |  8  |  9  |  +  |  -  |
+// | OFF |     |     |  $  |  %  |            |  7  |  8  |  9  |  +  |  -  |
 // |     |     |     |     |     |            |  4  |  5  |  6  |  *  |  /  |
 // |     |     |     | INS |     |            |  1  |  2  |  3  |  ^  |  =  |
 //       |     |     |     | mod |     ||     |  0  |     |     |
     
             bindings = <
-    &none    &none   &none   &kp DLLR  &kp PRCNT                     &kp KP_N7   &kp KP_N8  &kp KP_N9  &kp PLUS   &kp MINUS
-    &none    &none   &none   &none     &none                         &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp STAR   &kp FSLH
-    &none    &none   &none   &kp INS   &none                         &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp CARET  &kp EQUAL
-                     &none   &none     &none     &none       &none   &kp KP_N0   &none      &none
+    &kp LA(F4) &none   &none   &kp DLLR  &kp PRCNT                     &kp KP_N7   &kp KP_N8  &kp KP_N9  &kp PLUS   &kp MINUS
+    &none      &none   &none   &none     &none                         &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp STAR   &kp FSLH
+    &none      &none   &none   &kp INS   &none                         &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp CARET  &kp EQUAL
+                       &none   &none     &none     &none       &none   &kp KP_N0   &none      &none
             >;
         };
         
@@ -75,15 +75,15 @@
 
 // -----------------------------------------------------------------------------------------
 // | OFF |     |     |     |     |            |  (  |  )  |  &  |  |  |  @  |
-// |     |     |     |     |     |            |  [  |  ]  |  <  |  >  |  \  |
-// |     |     |     |     |     |            |  {  |  }  |  "  |  '  |  #  |
-//             |     | mod |     |     || DEL |  ?  |  !  |     |     |
+// |     |     |     |     |     |            |  [  |  ]  |  "  |  '  |  \  |
+// |     |     |     |     |     |            |  {  |  }  |  -  |  _  |  #  |
+//             |     | mod |     |     ||  !  |  ?  | DEL |     |
     
             bindings = <
     &kp LA(F4) &none   &none   &none  &none                   &kp LPAR   &kp RPAR   &kp AMPS  &kp PIPE   &kp AT
-    &none      &none   &none   &none  &none                   &kp LBKT   &kp RBKT   &kp LT    &kp GT     &kp BSLH
-    &none      &none   &none   &none  &none                   &kp LBRC   &kp RBRC   &kp DQT   &kp APOS   &kp POUND
-                       &none   &none  &none  &none    &kp DEL &kp QMARK  &kp EXCL   &none
+    &none      &none   &none   &none  &none                   &kp LBKT   &kp RBKT   &kp DQT   &kp SQT    &kp BSLH
+    &none      &none   &none   &none  &none                   &kp LBRC   &kp RBRC   &kp MINUS &kp UNDER  &kp POUND
+                       &none   &none  &none  &none      &none &kp QMARK  &kp DEL    &kp EXCL
             >;
         };
         
@@ -125,13 +125,13 @@
 // |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |  Å  |
 // |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |  Ö  |
-//             |CTRL |SHIFT|SPACE| TAB || BSP | RET | MOD | DEF |
+//             |CTRL | TAB |SPACE|SHIFT||     | RET | BSP | DEF |
     
             bindings = <
-    &kp Q   &kp W   &kp E       &kp R       &kp T                            &kp Y  &kp U     &kp I      &kp O    &kp P
-    &kp A   &kp S   &kp D       &kp F       &kp G                            &kp H  &kp J     &kp K      &kp L    &td0
-    &kp Z   &kp X   &kp C       &kp V       &kp B                            &kp N  &kp M     &kp COMMA  &kp DOT  &kp RA(P)
-                    &kp LCTRL   &kp LSHIFT  &kp SPACE   &kp TAB    &kp RET   &none  &kp BSPC  &to 0
+    &kp Q   &kp W   &kp E       &kp R    &kp T                            &kp Y  &kp U     &kp I      &kp O    &kp P
+    &kp A   &kp S   &kp D       &kp F    &kp G                            &kp H  &kp J     &kp K      &kp L    &td0
+    &kp Z   &kp X   &kp C       &kp V    &kp B                            &kp N  &kp M     &kp COMMA  &kp DOT  &kp RA(P)
+                    &kp LCTRL   &kp TAB  &kp SPACE  &kp LSHIFT    &none   &kp RET          &kp BSPC   &to 0
             >;
         };
  
