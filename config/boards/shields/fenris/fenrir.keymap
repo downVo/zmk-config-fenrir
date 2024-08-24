@@ -45,13 +45,13 @@
 // |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |     |
 // |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |     |
-//             |     | TAB |SPACE| MO2 || MO4 | RET | BSP | DEF |
+//             | GUI |SPACE| RET | MO2 || MO4 | BSP | TAB | DEF |
     
             bindings = <
-    &kp Q   &kp W       &kp E        &kp R         &kp T                           &kp Y      &kp U         &kp I        &kp O       &kp P
-    &kp A   &rpi LALT S &mt LCTRL D  &rpi LSHIFT F &kp G                           &kp H      &rpi RSHIFT J &rpi RCTRL K &rpi RALT L &none
-    &kp Z   &kp X       &kp C        &kp V         &kp B                           &kp N      &kp M         &kp COMMA    &kp DOT     &kp ESC
-                        &kp LGUI     &kp TAB       &lt 1 SPACE &mo 2        &mo 4  &lt 3 RET  &kp BSPC      &to 5
+    &kp Q   &kp W       &kp E        &kp R         &kp T                           &kp Y       &kp U         &kp I        &kp O       &kp P
+    &kp A   &rpi LALT S &mt LCTRL D  &rpi LSHIFT F &kp G                           &kp H       &rpi RSHIFT J &rpi RCTRL K &rpi RALT L &none
+    &kp Z   &kp X       &kp C        &kp V         &kp B                           &kp N       &kp M         &kp COMMA    &kp DOT     &kp ESC
+                        &kp LGUI     &kp SPACE     &lt 1 RET  &mo 2         &mo 4  &lt 3 BSPC  &kp TAB       &to 5
             >;
         };
         
@@ -77,13 +77,13 @@
 // | OFF |     |     |     |     |            |  (  |  )  |  &  |  |  |  @  |
 // |     |     |     |     |     |            |  [  |  ]  |  "  |  '  |  \  |
 // |     |     |     |     |     |            |  {  |  }  |  -  |  _  |  #  |
-//             |     | mod |     |     ||  !  |  ?  | DEL |     |
+//             |     | mod |     |     ||     | DEL |  ?  |  !  |
     
             bindings = <
     &kp LA(F4) &none   &none   &none  &none                   &kp LPAR   &kp RPAR   &kp AMPS  &kp PIPE   &kp AT
     &none      &none   &none   &none  &none                   &kp LBKT   &kp RBKT   &kp DQT   &kp SQT    &kp BSLH
     &none      &none   &none   &none  &none                   &kp LBRC   &kp RBRC   &kp MINUS &kp UNDER  &kp POUND
-                       &none   &none  &none  &none      &none &kp QMARK  &kp DEL    &kp EXCL
+                       &none   &none  &none  &none      &none &kp DEL    &kp QMARK  &kp EXCL
             >;
         };
         
@@ -91,15 +91,15 @@
 
 // -----------------------------------------------------------------------------------------
 // |     | END |  UP | HOM | PUP |     |            | F1  | F2  | F3  | F4  |     |
-// | GUI | LFT | DWN | RIG | PDW |     |            | F5  | F6  | F7  | F8  |     |
-// |     |     |     |     |     |     |            | F9  | F10 | F11 | F12 |     |
-//             |     |     |     |SHIFT|     ||     | mod |     |     |
+// |SHIFT| LFT | DWN | RIG | PDW |     |            | F5  | F6  | F7  | F8  |     |
+// | GUI |     |     |     |     |     |            | F9  | F10 | F11 | F12 |     |
+//             |     |     |     |     |     ||     | mod |     |     |
     
             bindings = <
-    &none    &kp END   &kp UP    &kp HOME   &kp PG_UP                   &kp F1    &kp F2   &kp F3   &kp F4   &none
-    &kp LGUI &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN                   &kp F5    &kp F6   &kp F7   &kp F8   &none
-    &none    &none     &none     &none      &none                       &kp F9    &kp F10  &kp F11  &kp F12  &none
-                       &none     &none      &kp LSHIFT      &none    &none   &none     &none    &none
+    &none      &kp END   &kp UP    &kp HOME   &kp PG_UP                   &kp F1    &kp F2   &kp F3   &kp F4   &none
+    &kp LSHIFT &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN                   &kp F5    &kp F6   &kp F7   &kp F8   &none
+    &kp LGUI   &none     &none     &none      &none                       &kp F9    &kp F10  &kp F11  &kp F12  &none
+                         &none     &none      &none      &none    &none   &none     &none    &none
             >;
         };
 
@@ -123,15 +123,15 @@
 
 // -----------------------------------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  |
-// |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |     |
-// |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |     |
-//             |CTRL | TAB |SPACE|SHIFT||     | RET | BSP | DEF |
+// |SHIFT|  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |     |
+// | CTL |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |     |
+//             | ALT |SPACE| TAB |     ||     | RET | BSP | DEF |
     
             bindings = <
-    &kp Q   &kp W   &kp E       &kp R    &kp T                            &kp Y  &kp U     &kp I      &kp O    &kp P
-    &kp A   &kp S   &kp D       &kp F    &kp G                            &kp H  &kp J     &kp K      &kp L    &none
-    &kp Z   &kp X   &kp C       &kp V    &kp B                            &kp N  &kp M     &kp COMMA  &kp DOT  &kp ESC
-                    &kp LCTRL   &kp TAB  &kp SPACE  &kp LSHIFT    &none   &kp RET          &kp BSPC   &to 0
+    &kp Q       &kp W   &kp E     &kp R      &kp T                        &kp Y  &kp U     &kp I      &kp O    &kp P
+    &kp LSHIFT  &kp S   &kp D     &kp F      &kp G                        &kp H  &kp J     &kp K      &kp L    &none
+    &kp LCTRL   &kp X   &kp C     &kp V      &kp B                        &kp N  &kp M     &kp COMMA  &kp DOT  &kp ESC
+                        &kp LALT  &kp SPACE  &kp TAB  &none    &none  &kp RET  &kp BSPC    &to 0
             >;
         };
  
