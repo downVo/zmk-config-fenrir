@@ -11,28 +11,6 @@
   };
   
 / {
-    macros {
-        AST: altShiftTab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp TAB>
-                , <&macro_release &kp LALT>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-        AT: altTab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp TAB>
-                , <&macro_release &kp LALT>
-                ;
-        };
-    };
     behaviors {   
         td: tapdance {
             compatible = "zmk,behavior-tap-dance";
@@ -63,6 +41,8 @@
 //       |  ||  ||  ||  ||  |  ||  ||  ||  |
     
     COMBO(esc, &kp ESC, 1 2)
+    COMBO(altTab, &kp LA(TAB), 2 3)
+    COMBO(altShiftTab, &kp LA(LS(TAB)), 12 13)
     COMBO(tab, &kp TAB, 11 12)
     COMBO(equal, &kp EQUAL, 3 13)
     COMBO(pound, &kp POUND, 2 12)
