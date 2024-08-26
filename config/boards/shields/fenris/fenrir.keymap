@@ -2,15 +2,45 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0 1>; \
+  };
+  
 / {
+    macros {
+        AST: altShiftTab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LALT>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+        AT: altTab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LALT>
+                ;
+        };
+    };
     behaviors {   
-        td0: tapdance0 {
+        td: tapdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RA(Q)>, <&kp RA(W)>;
+            tapping-term-ms = <50>;
+            bindings = <&kp>, <&kp>;
         };
-        rpi: require_prior_idle {
+        rp: require_prior_idle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -20,25 +50,48 @@
             bindings = <&kp>, <&kp>;
         };
     };
-
+   
     combos {
-        compatible = "zmk,combos";
-        combo_ESC {
-            timeout-ms = <50>;
-            key-positions = <4 14>;
-            bindings = <&kp ESC>;
-        }; 
-         combo_sticky_shift {
-            timeout-ms = <50>;
-            key-positions = <5 15>;
-            bindings = <&sk LSHIFT>;
-        };     
-        combo_softsleep {
-            timeout-ms = <50>;
-            key-positions = <0 1 2 3>;
-            bindings = <&soft_off>;
-        };
+    compatible = "zmk,combos";
+  // -----------------------------------------------------------------------------------------
+// |  ||  ||  ||  ||  ||       ||  ||  ||  ||  ||  |
+//
+// |  ||  ||  ||  ||  ||       ||  ||  ||  ||  ||  |
+//
+// |  ||  ||  ||  ||  ||       ||  ||  ||  ||  ||  |
+//
+//       |  ||  ||  ||  ||  |  ||  ||  ||  |
+    
+    COMBO(esc, &kp ESC, 1 2)
+    COMBO(tab, &kp TAB, 11 12)
+    COMBO(equal, &kp EQUAL, 3 13)
+    COMBO(pound, &kp POUND, 2 12)
+    COMBO(bslh, &kp BSLH, 12 22)
+    COMBO(at, &kp AT, 1 11)
+    COMBO(dollar, &kp DLLR, 11 21)
+
+
+
+    COMBO(bsp, &kp BSPC, 6 7)
+    COMBO(del, &kp DEL, 7 8)
+    COMBO(lpar, &kp LPAR, 16 17)
+    COMBO(rpar, &kp RPAR, 17 18)
+    COMBO(lbkt, &kp LBKT, 26 27)
+    COMBO(rbkt, &kp RBKT, 27 28)
+    COMBO(plus, &kp PLUS, 6 16)
+    COMBO(minus, &kp MINUS, 16 26)
+    COMBO(caret, &kp CARET, 5 15)
+    COMBO(uscore, &kp UNDER, 15 25)
+    COMBO(star, &kp STAR, 7 17)
+    COMBO(fslh, &kp FSLH, 17 27)
+    COMBO(amps, &kp AMPS, 8 18)
+    COMBO(pipe, &kp PIPE, 18 28)
+    COMBO(dqt, &kp DQT, 5 6)
+    COMBO(sqt, &kp SQT, 15 16)
+    COMBO(prcnt, &kp PRCNT, 25 26)
+
     };
+    
 
 
     keymap {
@@ -48,95 +101,64 @@
 
 // -----------------------------------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  |
-// |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |     |
-// |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |     |
-//             | GUI | BSP |SPACE| MO2 || MO4 | RET | TAB | DEF |
+// |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |  ?  |
+// |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |  !  |
+//             | GUI | ctl |SPACE| TO1 || TO2 | RET |SHIFT| DEF |
     
             bindings = <
-    &kp Q          &kp W        &kp E        &kp R      &kp T               &kp Y       &kp U         &kp I        &kp O       &kp P
-    &kp A  &rpi RALT S   &rpi RCTRL D  &kp F      &kp G               &kp H       &kp J &rpi RCTRL K &rpi RALT L &none
-    &kp Z   &kp X  &kp C        &kp V      &kp B                              &kp N   &kp M      &kp COMMA    &kp DOT     &none
-                   &kp LGUI     &kp BSPC    &lt 1 SPACE  &mo 2         &mo 4  &lt 3 RET  &kp TAB       &to 5
+    &kp Q        &kp W        &kp E        &kp R        &kp T                         &kp Y      &kp U       &kp I       &kp O   &kp P
+    &tp LC(A) A  &rp y S      &rp LALT D   &kp F        &kp G                         &kp H      &kp J       &rp RALT K  &kp L    &kp QMARK
+    &tp LC(Z) Z  &tp LC(X) X  &tp LC(C) C  &tp LC(V) V  &kp B                         &kp N      &kp M       &kp COMMA   &kp DOT  &kp EXCL
+                              &kp LGUI     &kp LCTRL    &lt 1 SPACE  &to 1     &to 2  &lt 2 RET  &kp RSHIFT  &to 3
             >;
         };
         
         mod1_layer {
 
 // -----------------------------------------------------------------------------------------
-// | OFF |     |     |  $  |  %  |            |  7  |  8  |  9  |  +  |  -  |
-// |     |     |     |     |     |            |  4  |  5  |  6  |  *  |  /  |
-// |     |     |     | INS |     |            |  1  |  2  |  3  |  ^  |  =  |
-//       |     |     |     | mod |     ||     |  0  |     |     |
+// | OFF |     |  7  |  8  |  9  |            |  7  |  8  |  9  | bt1 | bt2 |
+// |     |     |  4  |  5  |  6  |            |  4  |  5  |  6  | bt3 | btc |
+// |     |  0  |  1  |  2  |  3  |            |  1  |  2  |  3  |     |     |
+//       |     | GUI | ctl | mod | TO1 ||     |  0  |SHIFT|     |
     
             bindings = <
-    &kp LA(F4) &none   &none   &kp DLLR  &kp PRCNT                     &kp KP_N7   &kp KP_N8  &kp KP_N9  &kp PLUS   &kp MINUS
-    &none      &none   &none   &none     &none                         &kp KP_N4   &kp KP_N5  &kp KP_N6  &kp STAR   &kp FSLH
-    &none      &none   &none   &kp INS   &none                         &kp KP_N1   &kp KP_N2  &kp KP_N3  &kp CARET  &kp EQUAL
-                       &none   &none     &none     &none       &none   &kp KP_N0   &none      &none
+    &kp LA(F4) &none      &kp KP_N7   &kp KP_N8  &kp KP_N9                     &kp KP_N7   &kp KP_N8  &kp KP_N9  &bt BT_SEL 1  &bt BT_SEL 2
+    &none      &none      &kk KP_N4   &kp KP_N5  &kp KP_N6                     &kp KP_N4   &kp KP_N5  &kp KP_N6  &bt BT_SEL 3  &BT_CLR
+    &none      &kp KP_N0  &kp KP_N1   &kp KP_N2  &kp KP_N3                     &kp KP_N1   &kp KP_N2  &kp KP_N3  &none         &none
+                          &kp LGUI    &kp LCTRL  &none      &to 0       &none  &kp KP_N0   &kp RSHIFT &none
             >;
         };
         
         mod2_layer {
 
 // -----------------------------------------------------------------------------------------
-// | OFF |     |     |     |     |            |  (  |  )  |  &  |  |  |  @  |
-// |     |     |     |     |     |            |  [  |  ]  |  "  |  '  |  \  |
-// |     |     |     |     |     |            |  {  |  }  |  -  |  _  |  #  |
-//             |     | mod |     |     ||     |  ?  |  !  |     |
-    
-            bindings = <
-    &kp LA(F4) &none   &none   &none  &none                   &kp LPAR   &kp RPAR   &kp AMPS  &kp PIPE   &kp AT
-    &none      &none   &none   &none  &none                   &kp LBKT   &kp RBKT   &kp DQT   &kp SQT    &kp BSLH
-    &none      &none   &none   &none  &none                   &kp LBRC   &kp RBRC   &kp MINUS &kp UNDER  &kp POUND
-                       &none   &none  &none  &none            &none      &kp QMARK  &kp EXCL  &none
-            >;
-        };
-        
-        mod3_layer {
-
-// -----------------------------------------------------------------------------------------
 // |     | END |  UP | HOM | PUP |     |            | F1  | F2  | F3  | F4  |     |
-// |SHIFT| LFT | DWN | RIG | PDW |     |            | F5  | F6  | F7  | F8  |     |
-// | GUI |     |     |     |     |     |            | F9  | F10 | F11 | F12 |     |
-//                   |     | DEL |     |     ||     | mod |     |     |
+// |     | LFT | DWN | RIG | PDW |     |            | F5  | F6  | F7  | F8  |     |
+// |     |     |     |     |     |     |            | F9  | F10 | F11 | F12 |     |
+//                   | GUI | ctl |     |     || TO2 | mod |SHIFT|     |
     
             bindings = <
-    &none      &kp END   &kp UP    &kp HOME   &kp PG_UP                   &kp F1    &kp F2   &kp F3   &kp F4   &none
-    &kp LSHIFT &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN                   &kp F5    &kp F6   &kp F7   &kp F8   &none
-    &kp LGUI   &none     &none     &none      &none                       &kp F9    &kp F10  &kp F11  &kp F12  &none
-                         &none     &kp DEL    &none      &none    &none   &none     &none    &none
+    &none  &kp END  &kp UP    &kp HOME   &kp PG_UP                   &kp F1    &kp F2     &kp F3   &kp F4   &none
+    &none &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN                   &kp F5    &kp F6     &kp F7   &kp F8   &none
+    &none  &none    &none     &none      &none                       &kp F9    &kp F10    &kp F11  &kp F12  &none
+                    &kp LGUI  &kp LCTRL  &none      &none    &to 0   &none     &kp RSHIFT &none
             >;
         };
 
-        mod4_layer {
 
-// -----------------------------------------------------------------------------------------
-// |     |     |     |     |     |            | BT1 | BT1 |     |     |     |
-// |     |     |     |     |     |            | BT1 | BT1 |     |     |     |
-// |     |     |     |     |     |            | BT1 |BToff|     |     |     |
-//             |     |     |     |     ||     |     | mod |     |
-    
-            bindings = <
-    &none    &none   &none  &none  &none                    &bt BT_SEL 1   &bt BT_SEL 2  &none  &none   &none
-    &none    &none   &none  &none  &none                    &bt BT_SEL 3   &bt BT_SEL 4  &none  &none   &none
-    &none    &none   &none  &none  &none                    &bt BT_SEL 5   &bt BT_CLR    &none  &none   &none
-                     &none  &none  &none  &none     &none   &none          &none         &none
-            >;
-        };
-
-        mod5_layer {
+        mod3_layer {
 
 // -----------------------------------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  |
 // |SHIFT|  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |     |
 // | CTL |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |     |
-//             | ALT |SPACE| TAB |     ||     | RET | BSP | DEF |
+//             | ALT | TAB |SPACE| ESC ||     | RET | BSP | DEF |
     
             bindings = <
-    &kp Q       &kp W   &kp E     &kp R      &kp T                        &kp Y  &kp U     &kp I      &kp O    &kp P
-    &kp LSHIFT  &kp S   &kp D     &kp F      &kp G                        &kp H  &kp J     &kp K      &kp L    &none
-    &kp LCTRL   &kp X   &kp C     &kp V      &kp B                        &kp N  &kp M     &kp COMMA  &kp DOT  &kp ESC
-                        &kp LALT  &kp SPACE  &kp TAB  &none    &none  &kp RET  &kp BSPC    &to 0
+    &kp Q       &kp W   &kp E     &kp R    &kp T                        &kp Y    &kp U     &kp I      &kp O    &kp P
+    &kp LSHIFT  &kp S   &kp D     &kp F    &kp G                        &kp H    &kp J     &kp K      &kp L    &none
+    &kp LCTRL   &kp X   &kp C     &kp V    &kp B                        &kp N    &kp M     &kp COMMA  &kp DOT  &none
+                        &kp LALT  &kp TAB  &kp SPACE  &kp ESC      &none  &kp RET  &kp BSPC  &to 0
             >;
         };
  
