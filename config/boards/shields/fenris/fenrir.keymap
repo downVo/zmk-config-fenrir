@@ -87,7 +87,7 @@
     
             bindings = <
     &kp Q        &kp W        &kp E        &kp R        &kp T                         &kp Y      &kp U       &kp I       &kp O   &kp P
-    &tp LC(A) A  &rp y S      &rp LALT D   &kp F        &kp G                         &kp H      &kp J       &rp RALT K  &kp L    &kp QMARK
+    &tp LC(A) A  &rp S        &rp LALT D   &kp F        &kp G                         &kp H      &kp J       &rp RALT K  &kp L    &kp QMARK
     &tp LC(Z) Z  &tp LC(X) X  &tp LC(C) C  &tp LC(V) V  &kp B                         &kp N      &kp M       &kp COMMA   &kp DOT  &kp EXCL
                               &kp LGUI     &kp LCTRL    &lt 1 SPACE  &to 1     &to 2  &lt 2 RET  &kp RSHIFT  &to 3
             >;
