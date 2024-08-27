@@ -29,48 +29,6 @@
         };
     };
    
-    combos {
-    compatible = "zmk,combos";
-  // -----------------------------------------------------------------------------------------
-// |  ||  ||  ||  ||  ||       ||  ||  ||  ||  ||  |
-//
-// |  ||  ||  ||  ||  ||       ||  ||  ||  ||  ||  |
-//
-// |  ||  ||  ||  ||  ||       ||  ||  ||  ||  ||  |
-//
-//       |  ||  ||  ||  ||  |  ||  ||  ||  |
-    
-    COMBO(esc, &kp ESC, 1 2)
-    COMBO(altTab, &kp LA(TAB), 2 3)
-    COMBO(altShiftTab, &kp LA(LS(TAB)), 12 13)
-    COMBO(tab, &kp TAB, 11 12)
-    COMBO(equal, &kp EQUAL, 3 13)
-    COMBO(pound, &kp POUND, 2 12)
-    COMBO(bslh, &kp BSLH, 12 22)
-    COMBO(at, &kp AT, 1 11)
-    COMBO(dollar, &kp DLLR, 11 21)
-
-
-
-    COMBO(bsp, &kp BSPC, 6 7)
-    COMBO(del, &kp DEL, 7 8)
-    COMBO(lpar, &kp LPAR, 16 17)
-    COMBO(rpar, &kp RPAR, 17 18)
-    COMBO(lbkt, &kp LBKT, 26 27)
-    COMBO(rbkt, &kp RBKT, 27 28)
-    COMBO(plus, &kp PLUS, 6 16)
-    COMBO(minus, &kp MINUS, 16 26)
-    COMBO(caret, &kp CARET, 5 15)
-    COMBO(uscore, &kp UNDER, 15 25)
-    COMBO(star, &kp STAR, 7 17)
-    COMBO(fslh, &kp FSLH, 17 27)
-    COMBO(amps, &kp AMPS, 8 18)
-    COMBO(pipe, &kp PIPE, 18 28)
-    COMBO(dqt, &kp DQT, 5 6)
-    COMBO(sqt, &kp SQT, 15 16)
-    COMBO(prcnt, &kp PRCNT, 25 26)
-
-    };
     
 
 
