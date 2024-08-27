@@ -27,7 +27,7 @@
     compatible = "zmk,combos";
   
     COMBO(esc, &kp ESC, 1 2)
-    COMBO(bsp, &kp BSPC, 2 3)
+    COMBO(lbsp, &kp BSPC, 2 3)
     COMBO(altTab, &kp LA(TAB), 12 13)
     COMBO(altShiftTab, &kp LA(LS(TAB)), 22 23)
     COMBO(tab, &kp TAB, 11 12)
@@ -37,7 +37,7 @@
     COMBO(at, &kp AT, 1 11)
     COMBO(dollar, &kp DLLR, 11 21)
 
-    COMBO(bsp, &kp BSPC, 6 7)
+    COMBO(rbsp, &kp BSPC, 6 7)
     COMBO(del, &kp DEL, 7 8)
     COMBO(lpar, &kp LPAR, 16 17)
     COMBO(rpar, &kp RPAR, 17 18)
