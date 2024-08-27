@@ -19,7 +19,7 @@
             bindings = <&kp A>, <&kp LC(A)>;
         };
         
-        };
+        
         rp: require_prior_idle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
