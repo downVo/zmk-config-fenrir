@@ -18,8 +18,30 @@
             tapping-term-ms = <50>;
             bindings = <&kp A>, <&kp LC(A)>;
         };
-        
-        
+        tpz: tapdance_z {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <50>;
+            bindings = <&kp Z>, <&kp LC(Z)>;
+        };
+        tpx: tapdance_x {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <50>;
+            bindings = <&kp X>, <&kp LC(X)>;
+        };
+        tpc: tapdance_c {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <50>;
+            bindings = <&kp C>, <&kp LC(C)>;
+        };
+        tpv: tapdance_v {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <50>;
+            bindings = <&kp V>, <&kp LC(V)>;
+        };
         rp: require_prior_idle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
