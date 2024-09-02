@@ -51,7 +51,7 @@
     COMBO(amps, &kp AMPS, 8 18)
     COMBO(pipe, &kp PIPE, 18 28)
     COMBO(sqt, &kp SQT, 5 6)
-    COMBO(colon &kp SEMI, 15 16)
+    COMBO(colon, &kp SEMI, 15 16)
     COMBO(prcnt, &kp PRCNT, 25 26)
     COMBO(copy, &kp LC(C), 21 22)
     COMBO(paste, &kp LC(V), 22 23)
