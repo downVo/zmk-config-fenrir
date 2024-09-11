@@ -79,8 +79,8 @@
 
 
     COMBO(rbsp, &kp BSPC, 6 7)
-    COMBO(?, &kp QMARK,  9 19)
-    COMBO(!, &kp EXCL, 19 29)
+    COMBO(qmark, &kp QMARK,  9 19)
+    COMBO(excl, &kp EXCL, 19 29)
     COMBO(lpar, &kp LPAR, 16 17)
     COMBO(rpar, &kp RPAR, 17 18)
     COMBO(lbkt, &kp LBKT, 26 27)
