@@ -29,7 +29,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp SV_A_UMLAUT>, <&kp SV_A_RING>;
-            };
+            
         };
     
     };
