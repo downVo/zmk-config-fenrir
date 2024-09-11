@@ -24,17 +24,17 @@
 
         td_ae_aa: ae_aa {
             compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
             bindings = <&ae>, <&aa>;
         };
     };
     macros {
         oe: oe {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            #binding-cells = <1>;
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press   &kp LALT>
                 , <&macro_tap     &kp KP_N1 &kp KP_N4 &kp KP_N8>
@@ -44,7 +44,7 @@
 
         aa: aa {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             wait-ms = <40>;
             tap-ms = <40>;
             bindings
@@ -56,7 +56,7 @@
 
         ae: ae {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             wait-ms = <40>;
             tap-ms = <40>;
             bindings
