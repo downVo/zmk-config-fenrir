@@ -21,6 +21,13 @@
             require-prior-idle-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
+
+        td_ae_aa: ae_aa {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&ae>, <&aa>;
+        };
     };
     macros {
         oe: oe {
@@ -117,7 +124,7 @@
     
             bindings = <
     &kp Q  &kp W   &kp E       &kp R     &kp T                         &kp Y      &kp U       &kp I       &kp O   &kp P
-    &kp A  &kp S   &kp D  &rp LALT F     &kp G                         &kp H      &rp RALT J  &kp K       &kp L   &kp QMARK
+    &kp A  &kp S   &kp D  &rp LALT F     &kp G                         &kp H      &rp RALT J  &kp K       &kp L   &td_ae_aa
     &kp Z  &kp X   &kp C       &kp V     &kp B                         &kp N      &kp M       &kp COMMA   &kp DOT &oe
                    &kp LCTRL  &kp LSHIFT &lt 1 SPACE  &mo 2     &mo 2  &lt  1 RET  &kp LGUI  &to 3
             >;
