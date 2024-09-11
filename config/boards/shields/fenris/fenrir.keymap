@@ -24,7 +24,7 @@
 
         td_ae_aa: ae_aa {
             compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&ae>, <&aa>;
         };
