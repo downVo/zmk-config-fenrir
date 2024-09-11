@@ -32,7 +32,7 @@
     macros {
         oe: oe {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
             bindings
@@ -44,7 +44,7 @@
 
         aa: aa {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
             bindings
@@ -56,7 +56,7 @@
 
         ae: ae {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
             bindings
