@@ -61,12 +61,12 @@
     COMBO(dqt, &kp SV_DOUBLE_QUOTES, 15 16)
     COMBO(let, &kp SV_LESS_THAN, 25 26)
     COMBO(grt, &kp SV_GREATER_THAN, 28 29)
-    COMBO(lpar, &kp SV_LEFT_PARENTHESIS, 6 7)
-    COMBO(rpar, &kp SV_RIGHT_PARENTHESIS, 7 8)
-    COMBO(lbkt, &kp SV_LEFT_BRACKET, 16 17)
-    COMBO(rbkt, &kp SV_RIGHT_BRACKET, 17 18)
-    COMBO(lbrc, &kp SV_LEFT_BRACE, 26 27) 
-    COMBO(rbrc, &kp SV_RIGHT_BRACE, 27 28) 
+    COMBO(lpar, &kp SV_LEFT_PARENTHESIS, 16  17)
+    COMBO(rpar, &kp SV_RIGHT_PARENTHESIS, 17 18)
+    COMBO(lbkt, &kp SV_LEFT_BRACKET, 26 27)
+    COMBO(rbkt, &kp SV_RIGHT_BRACKET, 27 28)
+    COMBO(lbrc, &kp SV_LEFT_BRACE, 6 7) 
+    COMBO(rbrc, &kp SV_RIGHT_BRACE, 7 8) 
 
     COMBO(qmark, &kp SV_QUESTION,  9 19) 
     COMBO(excl, &kp SV_EXCLAMATION, 19 29) 
@@ -111,7 +111,7 @@
 // -----------------------------------------------------------------------------------------
 // | OFF |  1  |  2  |  3  |     |            |  7  |  8  |  9  |     | bt0 |
 // |  0  |  4  |  4  |  6  |     |            |  4  |  5  |  6  |     | bt1 |
-// |  0  |  8  |  8   |  9  |     |            |  1  |  2  |  3  |  .  | bt3 |
+// |  0  |  8  |  8  |  9  |     |            |  1  |  2  |  3  |  .  | bt3 |
 //       |     | ctl | shi | mod |     ||     |  0  | gui | btc |
     
             bindings = <
@@ -151,7 +151,7 @@
     &kp Q       &kp W   &kp E     &kp R    &kp T                        &kp Y    &kp U     &kp I      &kp O    &kp P
     &kp LSHIFT  &kp S   &kp D     &kp F    &kp G                        &kp H    &kp J     &kp K      &kp L    &none
     &kp LCTRL   &kp X   &kp C     &kp V    &kp B                        &kp N    &kp M     &kp COMMA  &kp DOT  &none
-                        &kp ESC  &kp LALT  &kp SPACE  &kp TAB      &none  &kp RET  &kp BSPC  &to 0
+                        &kp ESC  &kp LALT  &kp SPACE  &kp TAB    &none  &kp RET  &kp BSPC  &to 0
             >;
         };
  
