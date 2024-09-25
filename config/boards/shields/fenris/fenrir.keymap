@@ -4,12 +4,12 @@
 #include "keys_sv.h"
 
 
-#define COMBO(NAME, BINDINGS, KEYPOS) \
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYER) \
   combo_##NAME { \
     timeout-ms = <50>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <0 1>; \
+    layers = <LAYER>; \
   };
   
 / {
@@ -46,47 +46,51 @@
     combos {
     compatible = "zmk,combos";
   
-    COMBO(esc, &kp ESC, 1 2)
-    COMBO(lbsp, &kp BSPC, 2 3)
-    COMBO(ret, &kp RET, 12 13)
-    COMBO(tab, &kp TAB, 11 12)
-    COMBO(equal, &kp SV_EQUAL, 3 13)
-    COMBO(pound, &kp SV_HASH, 2 12)
-    COMBO(bslh, &kp SV_BACKSLASH, 12 22)
-    COMBO(at, &kp SV_AT_SIGN, 1 11)
-    COMBO(dollar, &kp SV_DOLLAR, 11 21)
-    COMBO(del, &kp DEL, 3 4)
-    COMBO(prcnt, &kp SV_PERCENT, 13 14)
-    COMBO(tild, &kp SV_TILDE, 23 24)
+    COMBO(lesc, &kp ESC, 1 2, 0)
+    COMBO(lbsp, &kp BSPC, 2 3, 0)
+    COMBO(lret, &kp RET, 12 13, 0)
+    COMBO(ltab, &kp TAB, 11 12, 0)
+    COMBO(ldel, &kp DEL, 3 4, 0)
     
-    COMBO(copy, &kp LC(C), 21 22)
-    COMBO(paste, &kp LC(V), 22 23)
-    COMBO(cut, &kp LC(X), 20 21)
-
-
-    COMBO(sqt, &kp SV_SINGLE_QUOTE, 5 6)
-    COMBO(dqt, &kp SV_DOUBLE_QUOTES, 15 16)
-    COMBO(let, &kp SV_LESS_THAN, 25 26)
-    COMBO(grt, &kp SV_GREATER_THAN, 28 29)
-    COMBO(lpar, &kp SV_LEFT_PARENTHESIS, 16  17)
-    COMBO(rpar, &kp SV_RIGHT_PARENTHESIS, 17 18)
-    COMBO(lbkt, &kp SV_LEFT_BRACKET, 26 27)
-    COMBO(rbkt, &kp SV_RIGHT_BRACKET, 27 28)
-    COMBO(lbrc, &kp SV_LEFT_BRACE, 6 7) 
-    COMBO(rbrc, &kp SV_RIGHT_BRACE, 7 8) 
-
-    COMBO(qmark, &kp SV_QUESTION,  9 19) 
-    COMBO(excl, &kp SV_EXCLAMATION, 19 29) 
-   
-    COMBO(plus, &kp SV_PLUS, 6 16)
-    COMBO(minus, &kp SV_MINUS, 16 26)
-    COMBO(caret, &kp SV_CARET, 5 15)
-    COMBO(uscore, &kp SV_UNDERSCORE, 15 25)
-    COMBO(star, &kp SV_STAR, 7 17)
-    COMBO(fslh, &kp SV_SLASH, 17 27)
-    COMBO(amps, &kp SV_AMPERSAND, 8 18)
-    COMBO(pipe, &kp SV_PIPE, 18 28)
+    COMBO(amps, &kp SV_AT_SIGN, 4 14, 0) 
     
+    COMBO(copy, &kp LC(C), 21 22, 0)
+    COMBO(paste, &kp LC(V), 22 23, 0)
+    COMBO(cut, &kp LC(X), 20 21, 0)
+
+
+    COMBO(resc, &kp ESC, 7 8, 0)
+    COMBO(rbsp, &kp BSPC, 6 7, 0)
+    COMBO(rret, &kp RET, 16 17, 0)
+    COMBO(rtab, &kp TAB, 17 18, 0)
+    COMBO(rdel, &kp DEL, 5 6, 0)
+
+    COMBO(qmark, &kp SV_QUESTION,  9 19, 0) 
+    COMBO(excl, &kp SV_EXCLAMATION, 19 29, 0) 
+  
+
+    COMBO(lpar, &kp SV_LEFT_PARENTHESIS, 16  17, 1)
+    COMBO(rpar, &kp SV_RIGHT_PARENTHESIS, 17 18, 1)
+    COMBO(lbrc, &kp SV_LEFT_BRACE, 16 17, 2) 
+    COMBO(rbrc, &kp SV_RIGHT_BRACE, 17 18, 2) 
+
+    COMBO(lbkt, &kp SV_LEFT_BRACKET, 6 7, 1)
+    COMBO(rbkt, &kp SV_RIGHT_BRACKET, 7 8, 1)
+    COMBO(let, &kp SV_LESS_THAN, 6 7, 2)
+    COMBO(grt, &kp SV_GREATER_THAN, 7 8, 2)
+
+
+    COMBO(equal, &kp SV_EQUAL, 5 6, 1)
+    COMBO(uscore, &kp SV_UNDERSCORE, 15 16, 1)
+
+    COMBO(sqt, &kp SV_SINGLE_QUOTE, 5 15, 1) 
+    COMBO(dqt, &kp SV_DOUBLE_QUOTES, 15 25, 1) 
+
+    COMBO(caret, &kp SV_CARET, 6 16, 1) 
+    COMBO(tild, &kp SV_TILDE, 16 26, 1)
+
+    COMBO(dollar, &kp SV_DOLLAR, 25 26, 1) 
+     
     
     
     };
@@ -103,28 +107,28 @@
 // |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |  ä  |
 // |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |  ö  |
-//             | ctl | shi |SPACE| TO1 || TO2 | RET | gui | DEF |
+//             | ctl | shi | m12 |SPACE||     |SPACE| gui | DEF |
     
             bindings = <
-    &kp Q  &kp W   &kp E      &kp R       &kp T                         &kp Y      &kp U        &kp I        &kp O         &kp P
-    &kp A  &kp S   &kp D      &rp LALT F  &kp G                         &kp H      &rp RALT J   &kp K        &kp L         &td_ae_aa
-    &kp Z  &kp X   &kp C      &rp LALT V  &kp B                         &kp N      &rp LALT  M  &kp SV_COMMA &kp SV_PERIOD &kp SV_O_UMLAUT
-                   &kp LCTRL  &kp LSHIFT  &kp SPACE  &td_1_2     &mo 1  &lt 2 RET  &kp LGUI     &to 3
+    &kp Q  &kp W   &kp E      &kp R       &kp T                         &kp Y   &kp U        &kp I        &kp O         &kp P
+    &kp A  &kp S   &kp D      &rp LALT F  &kp G                         &kp H   &rp RALT J   &kp K        &kp L         &td_ae_aa
+    &kp Z  &kp X   &kp C      &rp LALT V  &kp B                         &kp N   &rp LALT  M  &kp SV_COMMA &kp SV_PERIOD &kp SV_O_UMLAUT
+                   &kp LCTRL  &kp LSHIFT  &td_1_2  &kp SPACE     &none  &kp SPACE  &kp LGUI     &to 3
             >;
         };
         
         mod1_layer {
 
 // -----------------------------------------------------------------------------------------
-// | OFF |  1  |  2  |  3  |     |            |  7  |  8  |  9  |     | bt0 |
-// |  0  |  4  |  4  |  6  |     |            |  4  |  5  |  6  |     | bt1 |
-// |  0  |  8  |  8  |  9  |     |            |  1  |  2  |  3  |  .  | bt3 |
+// | OFF |  1  |  2  |  3  |     |            |  +  |  -  |  *  |     | bt0 |
+// |  0  |  4  |  4  |  6  |     |            |  /  |  %  |  \  |     | bt1 |
+// |  0  |  8  |  8  |  9  |  .  |            |  &  |  |  |  #  |     | bt3 |
 //       |     | ctl | shi | mod |     ||     |  0  | gui | btc |
     
             bindings = <
-    &kp LA(F4) &kp N1  &kp N2    &kp N3      &none                   &kp N7  &kp N8  &kp N9  &none    &bt BT_SEL 0
-    &kp N0     &kp N4  &kp N5    &kp N6      &none                    &kp N4  &kp N5  &kp N6  &none    &bt BT_SEL 1
-    &kp N0     &kp N7  &kp N8    &kp N9      &none                    &kp N1  &kp N2  &kp N3  &kp DOT  &bt BT_SEL 2
+    &kp LA(F4) &kp N1  &kp N2    &kp N3      &none                    &kp SV_PLUS       &kp SV_MINUS    &kp SV_STAR       &none  &bt BT_SEL 0
+    &kp N0     &kp N4  &kp N5    &kp N6      &none                    &kp SV_SLASH      &kp SV_PERCENT  &kp SV_BACKSLASH  &none  &bt BT_SEL 1
+    &kp N0     &kp N7  &kp N8    &kp N9      &kp DOT                  &kp SV_AMPERSAND  &kp SV_PIPE     &kp SV_HASH       &none  &bt BT_SEL 2
                        &kp LCTRL &kp LSHIFT  &none   &none     &none  &kp N0  &kp GUI &bt BT_CLR_ALL
             >;
         };
@@ -132,10 +136,10 @@
         mod2_layer {
 
 // -----------------------------------------------------------------------------------------
-// |     | hom |  UP | end | PUP |                  | F1  | F2  | F3  | F4  |     |
-// |     | LFT | DWN | RIG | PDW |                  | F5  | F6  | F7  | F8  |     |
-// |     |     |     |     |     |                  | F9  | F10 | F11 | F12 |     |
-//                   | ctl | shi |     |     ||     | mod | gui |     |
+// |     | hom |  UP | end | PUP |            | F1  | F2  | F3  | F4  |     |
+// |     | LFT | DWN | RIG | PDW |            | F5  | F6  | F7  | F8  |     |
+// |     |     |     |     |     |            | F9  | F10 | F11 | F12 |     |
+//             | ctl | shi | mod |     ||     |     | gui |     |
     
             bindings = <
     &none &kp HOME &kp UP    &kp END    &kp PG_UP                   &kp F1    &kp F2    &kp F3   &kp F4   &none
@@ -149,7 +153,7 @@
         mod3_layer {
 
 // -----------------------------------------------------------------------------------------
-// |  Q  |  Q  |  W  |  E  |  R  |            |  T  |  Y  |  U  |  I  |  O  |
+// | tab |  Q  |  W  |  E  |  R  |            |  T  |  Y  |  U  |  I  |  O  |
 // |SHIFT|  A  |  S  |  D  |  F  |            |  G  |  H  |  J  |  K  |  L  |
 // | CTL |  Z  |  X  |  C  |  V  |            |  B  |  N  |  M  |  ,  |  .  |
 //             | ESC | ALT |SPACE| TAB ||     | RET | BSP | DEF |
