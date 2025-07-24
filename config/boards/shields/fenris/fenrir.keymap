@@ -117,49 +117,6 @@
     compatible = "zmk,combos";
   
     //COMBO(lesc, &kp ESC, 1 2, 0)
-    //COMBO(lbsp, &kp BSPC, 2 3, 0)
-    //COMBO(lret, &kp RET, 12 13, 0)
-    //COMBO(ltab, &kp TAB, 11 12, 0)
-    //COMBO(ldel, &kp DEL, 3 4, 0)
-    
-    //COMBO(amps, &kp SV_AT_SIGN, 4 14, 0) 
-    
-    //COMBO(copy, &kp LC(C), 21 22, 0)
-    //COMBO(paste, &kp LC(V), 22 23, 0)
-    //COMBO(cut, &kp LC(X), 20 21, 0)
-
-
-    //COMBO(resc, &kp ESC, 7 8, 0)
-    //COMBO(rbsp, &kp BSPC, 6 7, 0)
-    //COMBO(rret, &kp RET, 16 17, 0)
-    //COMBO(rtab, &kp TAB, 17 18, 0)
-    //COMBO(rdel, &kp DEL, 5 6, 0)
-
-    //COMBO(qmark, &kp SV_QUESTION,  9 19, 0) 
-    //COMBO(excl, &kp SV_EXCLAMATION, 19 29, 0) 
-  
-
-    //COMBO(lpar, &kp SV_LEFT_PARENTHESIS, 16  17, 1)
-    //COMBO(rpar, &kp SV_RIGHT_PARENTHESIS, 17 18, 1)
-    //COMBO(lbrc, &kp SV_LEFT_BRACE, 16 17, 2) 
-    //COMBO(rbrc, &kp SV_RIGHT_BRACE, 17 18, 2) 
-
-    //COMBO(lbkt, &kp SV_LEFT_BRACKET, 6 7, 1)
-    //COMBO(rbkt, &kp SV_RIGHT_BRACKET, 7 8, 1)
-    //COMBO(let, &kp SV_LESS_THAN, 6 7, 2)
-    //COMBO(grt, &kp SV_GREATER_THAN, 7 8, 2)
-
-
-    //COMBO(equal, &kp SV_EQUAL, 5 6, 1)
-    //COMBO(uscore, &kp SV_UNDERSCORE, 15 16, 1)
-
-    //COMBO(sqt, &kp SV_SINGLE_QUOTE, 5 15, 1) 
-    //COMBO(dqt, &kp SV_DOUBLE_QUOTES, 15 25, 1) 
-
-    //COMBO(caret, &kp SV_CARET, 6 16, 1) 
-    //COMBO(tild, &kp SV_TILDE, 16 26, 1) 
-
-    //COMBO(dollar, &kp SV_DOLLAR, 25 26, 1) 
      
     };
     
@@ -188,13 +145,13 @@
 // -----------------------------------------------------------------------------------------
 // |  0  |  1  |  2  |  3  | % \ | + - |            | ( ) | HOM | uAr | END | pUp | DEL |
 // | SHF |  4  |  5  |  6  |     | * / |            | [ ] | lAr | dAr | rAr | pDn |  =  |
-// | CTL |  7  |  8  |  9  | . , | & | |            | { } | < > |     |     |     | OFF |
+// | CTL |  7  |  8  |  9  | . , | & | |            | { } | < > |     |     |     |     |
 //       | ALT | MO3 | MOD |SPACE|                        |SPACE| MOD | MO3 | GUI |
     
             bindings = <
     &kp N0      &kp N1    &kp N2  &kp N3  &kp R             &td_plus_minus        &td_parant   &kp HOME   &kp UP    &kp END    &kp PG_UP  &kp DEL
     &kp LSHIFT  &kp N4    &kp N5  &kp N6  &none             &td_star_slash        &td_bracket  &kp LEFT   &kp DOWN  &kp RIGHT  &kp PG_DN  &kp SV_EQUAL
-    &kp LCTRL   &kp N7    &kp N8  &kp N9  &td_period_comma  &td_amp_pipe          &td_brace    &td_lt_gt  &none     &none      &none      &kp LA(F4)
+    &kp LCTRL   &kp N7    &kp N8  &kp N9  &td_period_comma  &td_amp_pipe          &td_brace    &td_lt_gt  &none     &none      &none      &none
                 &kp LALT  &mo 3   &none   &kp SPACE                                            &kp SPACE  &none     &mo 3      &kp LGUI
             >;
         };
@@ -202,15 +159,15 @@
         mod2_layer {
 
 // -----------------------------------------------------------------------------------------
-// |     |  F1 |  F2 |  F3 |  F4 |     |            |  "  | HOM | uAr | END | pUp |  ^  |
+// | OFF |  F1 |  F2 |  F3 |  F4 |     |            |  "  | HOM | uAr | END | pUp |  ^  |
 // | SHF |  F5 |  F6 |  F7 |  F8 |     |            |  '  | lAr | dAr | rAr | pDn | ? ! |
-// | CTL |  F9 | F10 | F11 | F12 |     |            |  _  |  @  |  `  |  ~  | # $ | OFF |
+// | CTL |  F9 | F10 | F11 | F12 |     |            |  _  |  @  |  `  |  ~  | # $ |     |
 //       | ALT | MOD | MO3 |SPACE|                        |SPACE| MO3 | MOD | GUI |
     
             bindings = <
-    &none       &kp F1    &kp F2   &kp F3   &kp F4     &none        &kp SV_DOUBLE_QUOTES  &kp HOME        &kp UP        &kp END       &kp PG_UP     &kp SV_CARET
+    &kp LA(F4)  &kp F1    &kp F2   &kp F3   &kp F4     &none        &kp SV_DOUBLE_QUOTES  &kp HOME        &kp UP        &kp END       &kp PG_UP     &kp SV_CARET
     &kp LSHIFT  &kp F5    &kp F6   &kp N7   &kp F8     &none        &kp SV_SINGLE_QUOTE   &kp LEFT        &kp DOWN      &kp RIGHT     &kp PG_DN     &td_qu_ex
-    &kp LCTRL   &kp F9    &kp F10  &kp F11  &kp F12    &none        &kp SV_UNDERSCORE     &kp SV_AT_SIGN  &kp SV_GRAVE  &kp SV_TILDE  &td_hash_dol  &kp LA(F4)
+    &kp LCTRL   &kp F9    &kp F10  &kp F11  &kp F12    &none        &kp SV_UNDERSCORE     &kp SV_AT_SIGN  &kp SV_GRAVE  &kp SV_TILDE  &td_hash_dol  &none
                 &kp LALT  &none    &mo 3    &kp SPACE                                     &kp SPACE       &mo 3         &none         &kp LGUI
             >;
         };
