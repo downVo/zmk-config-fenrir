@@ -24,13 +24,83 @@
             bindings = <&kp>, <&kp>;
         };
 
+        td_plus_minus: plus_minus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SV_PLUS>, <&kp SV_MINUS>;
+        };
+
+        td_star_slash: star_slash {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SV_STAR>, <&kp SV_SLASH>;
+        };
+
+        td_amp_pipe: amp_pipe {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SV_AMPERSAND>, <&kp SV_PIPE>;
+        };
+
+        td_period_comma: period_comma {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SV_PERIOD>, <&kp SV_COMMA>;
+        };
+
+        td_parant: parant {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SV_LEFT_PARENTHESIS>, <&kp SV_RIGHT_PARENTHESIS>;
+        };
+
+        td_bracket: bracket {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SV_LEFT_BRACKET>, <&kp SV_RIGHT_BRACKET>;
+        };
+
+        td_brace: brace {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SV_LEFT_BRACE>, <&kp SV_RIGHT_BRACE>;
+        };
+
+        td_lt_gt: lt_gt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SV_LESS_THAN>, <&kp SV_GREATER_THAN>;
+        };
+
+        td_qu_ex: qu_ex {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SV_QUESTION>, <&kp SV_EXCLAMATION>;
+        };
+
+        td_hash_dol: hash_dol {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SV_HASH>, <&kp SV_DOLLAR>;
+        };
+
         td_ae_aa: ae_aa {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp SV_A_UMLAUT>, <&kp SV_A_RING>;
-            
+            bindings = <&kp SV_A_UMLAUT>, <&kp SV_A_RING>; 
         };
+
         td_1_2: lay_1_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -46,125 +116,119 @@
     combos {
     compatible = "zmk,combos";
   
-    COMBO(lesc, &kp ESC, 1 2, 0)
-    COMBO(lbsp, &kp BSPC, 2 3, 0)
-    COMBO(lret, &kp RET, 12 13, 0)
-    COMBO(ltab, &kp TAB, 11 12, 0)
-    COMBO(ldel, &kp DEL, 3 4, 0)
+    //COMBO(lesc, &kp ESC, 1 2, 0)
+    //COMBO(lbsp, &kp BSPC, 2 3, 0)
+    //COMBO(lret, &kp RET, 12 13, 0)
+    //COMBO(ltab, &kp TAB, 11 12, 0)
+    //COMBO(ldel, &kp DEL, 3 4, 0)
     
-    COMBO(amps, &kp SV_AT_SIGN, 4 14, 0) 
+    //COMBO(amps, &kp SV_AT_SIGN, 4 14, 0) 
     
-    COMBO(copy, &kp LC(C), 21 22, 0)
-    COMBO(paste, &kp LC(V), 22 23, 0)
-    COMBO(cut, &kp LC(X), 20 21, 0)
+    //COMBO(copy, &kp LC(C), 21 22, 0)
+    //COMBO(paste, &kp LC(V), 22 23, 0)
+    //COMBO(cut, &kp LC(X), 20 21, 0)
 
 
-    COMBO(resc, &kp ESC, 7 8, 0)
-    COMBO(rbsp, &kp BSPC, 6 7, 0)
-    COMBO(rret, &kp RET, 16 17, 0)
-    COMBO(rtab, &kp TAB, 17 18, 0)
-    COMBO(rdel, &kp DEL, 5 6, 0)
+    //COMBO(resc, &kp ESC, 7 8, 0)
+    //COMBO(rbsp, &kp BSPC, 6 7, 0)
+    //COMBO(rret, &kp RET, 16 17, 0)
+    //COMBO(rtab, &kp TAB, 17 18, 0)
+    //COMBO(rdel, &kp DEL, 5 6, 0)
 
-    COMBO(qmark, &kp SV_QUESTION,  9 19, 0) 
-    COMBO(excl, &kp SV_EXCLAMATION, 19 29, 0) 
+    //COMBO(qmark, &kp SV_QUESTION,  9 19, 0) 
+    //COMBO(excl, &kp SV_EXCLAMATION, 19 29, 0) 
   
 
-    COMBO(lpar, &kp SV_LEFT_PARENTHESIS, 16  17, 1)
-    COMBO(rpar, &kp SV_RIGHT_PARENTHESIS, 17 18, 1)
-    COMBO(lbrc, &kp SV_LEFT_BRACE, 16 17, 2) 
-    COMBO(rbrc, &kp SV_RIGHT_BRACE, 17 18, 2) 
+    //COMBO(lpar, &kp SV_LEFT_PARENTHESIS, 16  17, 1)
+    //COMBO(rpar, &kp SV_RIGHT_PARENTHESIS, 17 18, 1)
+    //COMBO(lbrc, &kp SV_LEFT_BRACE, 16 17, 2) 
+    //COMBO(rbrc, &kp SV_RIGHT_BRACE, 17 18, 2) 
 
-    COMBO(lbkt, &kp SV_LEFT_BRACKET, 6 7, 1)
-    COMBO(rbkt, &kp SV_RIGHT_BRACKET, 7 8, 1)
-    COMBO(let, &kp SV_LESS_THAN, 6 7, 2)
-    COMBO(grt, &kp SV_GREATER_THAN, 7 8, 2)
+    //COMBO(lbkt, &kp SV_LEFT_BRACKET, 6 7, 1)
+    //COMBO(rbkt, &kp SV_RIGHT_BRACKET, 7 8, 1)
+    //COMBO(let, &kp SV_LESS_THAN, 6 7, 2)
+    //COMBO(grt, &kp SV_GREATER_THAN, 7 8, 2)
 
 
-    COMBO(equal, &kp SV_EQUAL, 5 6, 1)
-    COMBO(uscore, &kp SV_UNDERSCORE, 15 16, 1)
+    //COMBO(equal, &kp SV_EQUAL, 5 6, 1)
+    //COMBO(uscore, &kp SV_UNDERSCORE, 15 16, 1)
 
-    COMBO(sqt, &kp SV_SINGLE_QUOTE, 5 15, 1) 
-    COMBO(dqt, &kp SV_DOUBLE_QUOTES, 15 25, 1) 
+    //COMBO(sqt, &kp SV_SINGLE_QUOTE, 5 15, 1) 
+    //COMBO(dqt, &kp SV_DOUBLE_QUOTES, 15 25, 1) 
 
-    COMBO(caret, &kp SV_CARET, 6 16, 1) 
-    COMBO(tild, &kp SV_TILDE, 16 26, 1)
+    //COMBO(caret, &kp SV_CARET, 6 16, 1) 
+    //COMBO(tild, &kp SV_TILDE, 16 26, 1) 
 
-    COMBO(dollar, &kp SV_DOLLAR, 25 26, 1) 
+    //COMBO(dollar, &kp SV_DOLLAR, 25 26, 1) 
      
-    
-    
     };
     
     
-
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
 
 // -----------------------------------------------------------------------------------------
-// |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  |
-// |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |  ä  |
-// |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |  ö  |
-//             | ctl | shi | m12 |SPACE||     |SPACE| gui | DEF |
+// | TAB |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  | BKS |
+// | SHF |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |  Ö  | RET |
+// | CTR |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |  Ä  | ESC |
+//       | ALT | MO2 | MO1 |SPACE|                        |SPACE| MO1 | MO2 | GUI |
     
             bindings = <
-    &kp Q  &kp W   &kp E      &kp R       &kp T                         &kp Y   &kp U        &kp I        &kp O         &kp P
-    &kp A  &kp S   &kp D      &rp LALT F  &kp G                         &kp H   &rp RALT J   &kp K        &kp L         &td_ae_aa
-    &kp Z  &kp X   &kp C      &rp LALT V  &kp B                         &kp N   &rp LALT  M  &kp SV_COMMA &kp SV_PERIOD &kp SV_O_UMLAUT
-                   &kp LCTRL  &kp LSHIFT  &td_1_2  &kp SPACE     &none  &kp SPACE  &kp LGUI     &to 3
+    &kp TAB     &kp Q     &kp W  &kp E  &kp R      &kp T      &kp Y  &kp U      &kp I        &kp O         &kp P            &kp BSPC
+    &kp LSHIFT  &kp A     &kp S  &kp D  &kp F      &kp G      &kp H  &kp J      &kp K        &kp L         &kp SV_O_UMLAUT  &kp RET
+    &kp LCTRL   &kp Z     &kp X  &kp C  &kp V      &kp B      &kp N  &kp M      &kp SV_COMMA &kp SV_PERIOD &td_ae_aa        &kp ESC
+                &kp LALT  &mo 2  &mo 1  &kp SPACE                    &kp SPACE  &mo 1        &mo 2         &kp LGUI
             >;
         };
-        
+
         mod1_layer {
 
 // -----------------------------------------------------------------------------------------
-// | OFF |  1  |  2  |  3  |     |            |  +  |  -  |  *  |     | bt0 |
-// |  0  |  4  |  4  |  6  |     |            |  /  |  %  |  \  |     | bt1 |
-// |  0  |  8  |  8  |  9  |  .  |            |  &  |  |  |  #  |     | bt3 |
-//       |     | ctl | shi | mod |     ||     |  0  | gui | btc |
+// |  0  |  1  |  2  |  3  | % \ | + - |            | ( ) | HOM | uAr | END | pUp | DEL |
+// | SHF |  4  |  5  |  6  |     | * / |            | [ ] | lAr | dAr | rAr | pDn |  =  |
+// | CTL |  7  |  8  |  9  | . , | & | |            | { } | < > |     |     |     | OFF |
+//       | ALT | MO3 | MOD |SPACE|                        |SPACE| MOD | MO3 | GUI |
     
             bindings = <
-    &kp LA(F4) &kp N1  &kp N2    &kp N3      &none                    &kp SV_PLUS       &kp SV_MINUS    &kp SV_STAR       &none  &bt BT_SEL 0
-    &kp N0     &kp N4  &kp N5    &kp N6      &none                    &kp SV_SLASH      &kp SV_PERCENT  &kp SV_BACKSLASH  &none  &bt BT_SEL 1
-    &kp N0     &kp N7  &kp N8    &kp N9      &kp DOT                  &kp SV_AMPERSAND  &kp SV_PIPE     &kp SV_HASH       &none  &bt BT_SEL 2
-                       &kp LCTRL &kp LSHIFT  &none   &none     &none  &kp N0  &kp GUI &bt BT_CLR_ALL
+    &kp N0      &kp N1    &kp N2  &kp N3  &kp R             &td_plus_minus        &td_parant   &kp HOME   &kp UP    &kp END    &kp PG_UP  &kp DEL
+    &kp LSHIFT  &kp N4    &kp N5  &kp N6  &none             &td_star_slash        &td_bracket  &kp LEFT   &kp DOWN  &kp RIGHT  &kp PG_DN  &kp SV_EQUAL
+    &kp LCTRL   &kp N7    &kp N8  &kp N9  &td_period_comma  &td_amp_pipe          &td_brace    &td_lt_gt  &none     &none      &none      &kp LA(F4)
+                &kp LALT  &mo 3   &none   &kp SPACE                                            &kp SPACE  &none     &mo 3      &kp LGUI
             >;
         };
-        
+
         mod2_layer {
 
 // -----------------------------------------------------------------------------------------
-// |     | hom |  UP | end | PUP |            | F1  | F2  | F3  | F4  |     |
-// |     | LFT | DWN | RIG | PDW |            | F5  | F6  | F7  | F8  |     |
-// |     |     |     |     |     |            | F9  | F10 | F11 | F12 |     |
-//             | ctl | shi | mod |     ||     |     | gui |     |
+// |     |  F1 |  F2 |  F3 |  F4 |     |            |  "  | HOM | uAr | END | pUp |  ^  |
+// | SHF |  F5 |  F6 |  F7 |  F8 |     |            |  '  | lAr | dAr | rAr | pDn | ? ! |
+// | CTL |  F9 | F10 | F11 | F12 |     |            |  _  |  @  |     |  ~  | # $ | OFF |
+//       | ALT | MOD | MO3 |SPACE|                        |SPACE| MO3 | MOD | GUI |
     
             bindings = <
-    &none &kp HOME &kp UP    &kp END    &kp PG_UP                   &kp F1    &kp F2    &kp F3   &kp F4   &none
-    &none &kp LEFT &kp DOWN  &kp RIGHT  &kp PG_DN                   &kp F5    &kp F6    &kp F7   &kp F8   &none
-    &none &none    &none     &none      &none                       &kp F9    &kp F10   &kp F11  &kp F12  &none
-                   &kp LCTRL &kp LSHIFT &none      &none    &none   &none     &kp GUI   &none
+    &none       &kp F1    &kp F2   &kp F3   &kp F4     &none        &kp SV_DOUBLE_QUOTES  &kp HOME        &kp UP    &kp END       &kp PG_UP     &kp SV_CARET
+    &kp LSHIFT  &kp F5    &kp F6   &kp N7   &kp F8     &none        &kp SV_SINGLE_QUOTE   &kp LEFT        &kp DOWN  &kp RIGHT     &kp PG_DN     &td_qu_ex
+    &kp LCTRL   &kp F9    &kp F10  &kp F11  &kp F12    &none        &kp SV_UNDERSCORE     &kp SV_AT_SIGN  &none     &kp SV_TILDE  &td_hash_dol  &kp LA(F4)
+                &kp LALT  &none    &mo 3    &kp SPACE                                     &kp SPACE       &mo 3     &none         &kp LGUI
             >;
         };
-
 
         mod3_layer {
 
 // -----------------------------------------------------------------------------------------
-// | tab |  Q  |  W  |  E  |  R  |            |  T  |  Y  |  U  |  I  |  O  |
-// |SHIFT|  A  |  S  |  D  |  F  |            |  G  |  H  |  J  |  K  |  L  |
-// | CTL |  Z  |  X  |  C  |  V  |            |  B  |  N  |  M  |  ,  |  .  |
-//             | ESC | ALT |SPACE| TAB ||     | RET | BSP | DEF |
+// |     |     |     |     |     |     |            |     |     |     |     |     |     |
+// | SHF |     |     |     |     |     |            |     |     |     |     |     |     |
+// | CTL |     |     |     |     |     |            |     |     |     |     |     |     |
+//       | ALT | MOD | MO3 |SPACE|                        |SPACE| MO3 | MOD | GUI |
     
             bindings = <
-    &kp TAB    &kp Q  &kp W   &kp E     &kp R                        &kp T    &kp Y    &kp U  &kp I      &kp O    
-    &kp LSHIFT &kp A  &kp S   &kp D     &kp F                        &kp G    &kp H    &kp J  &kp K      &kp L    
-    &kp LCTRL  &kp Z  &kp X   &kp C     &kp V                        &kp B    &kp N    &kp M  &kp COMMA  &kp DOT  
-                      &kp ESC &kp LALT  &kp SPACE  &kp TAB    &none  &kp RET  &kp BSPC &to 0
+    &none  &none     &none  &none  &none      &none       &none  &none      &none  &none  &none     &none
+    &none  &none     &none  &none  &none      &none       &none  &none      &none  &none  &none     &none
+           &kp LALT  &none  &none  &kp SPACE                     &kp SPACE  &none  &none  &kp LGUI
             >;
         };
- 
+
     };
 };
