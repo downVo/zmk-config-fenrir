@@ -129,7 +129,7 @@
 // -----------------------------------------------------------------------------------------
 // | TAB |  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |  O  |  P  | BKS |
 // | SHF |  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |  L  |  Ö  | RET |
-// | CTR |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  |  Ä  | ESC |
+// | CTR |  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |  .  | Ä Å | ESC |
 //       | ALT | MO2 | MO1 |SPACE|                        |SPACE| MO1 | MO2 | GUI |
     
             bindings = <
